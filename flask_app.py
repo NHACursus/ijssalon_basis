@@ -6,16 +6,13 @@ app=Flask(__name__)
 if __name__ == '__main__':   
     app.run(port=5000,debug=True)
 
-
 @app.route('/')
 def home():    
     return  render_template("home.html")     # "Welkom op mijn eerste Flask-website"
 
-
 '''
 instead of using set FLASK_APP = flask_app.py, try $env:FLASK_APP = "flask_app.py"
 '''
-
 
 @app.route('/prijzen')
 def prijzen():    
@@ -29,6 +26,4 @@ def recepten():
     items = [ { "recept": "Tiramisu di nona",       "img": "tiramisu.png" },         
               { "recept": "IJstaart met chocolade", "img": "ijstaart.png" } ]    
     return render_template("recepten.html", items=items)  # "Binnenkort verschijnen hier enkele recepten"
-
-
 
